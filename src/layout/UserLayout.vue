@@ -1,7 +1,5 @@
 <template>
-  <div id="setbread">
-    <h2>设置面包屑</h2>
-  </div>
+  <div id="userlayout"></div>
 </template>
 
 <script>

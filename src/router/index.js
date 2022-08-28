@@ -1,23 +1,33 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import BasicLayout from '../layout/BasicLayout.vue'
+import UserLayout from '../layout/UserLayout.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView,
-    redirect: '/orderlist',
-    children:[
+    name: "Login",
+    component: UserLayout,
+    children: [
       {
-        path: '/orderlist',
-        name: 'OrderList',
-        component: () => import('../views/List/OrderList.vue')
+        path: '/login',
+        name: 'Login',
+        component: () => import('../views/user/UserLogin.vue')
       }
     ]
   },
+  {
+    path: '/index',
+    name: 'Index',
+    component: BasicLayout,
+    children: [
+      {
+        
+      }
+    ]
+  }
   
 ]
 
