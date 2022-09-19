@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import BasicLayout from '../layout/BasicLayout.vue'
 import UserLayout from '../layout/UserLayout.vue'
 
 Vue.use(VueRouter)
@@ -8,8 +7,9 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: "Login",
+    name: "Index",
     component: UserLayout,
+    redirect: '/login',
     children: [
       {
         path: '/login',
@@ -17,18 +17,7 @@ const routes = [
         component: () => import('../views/user/UserLogin.vue')
       }
     ]
-  },
-  {
-    path: '/index',
-    name: 'Index',
-    component: BasicLayout,
-    children: [
-      {
-        
-      }
-    ]
-  }
-  
+  }, 
 ]
 
 const router = new VueRouter({
