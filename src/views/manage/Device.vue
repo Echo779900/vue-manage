@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>这是一个登陆页面</p>
+      设备管理
   </div>
 </template>
 

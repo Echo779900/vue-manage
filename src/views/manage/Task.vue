@@ -1,6 +1,6 @@
 <template>
-  <div id="basiclayout">
-      <p>this is a test page</p>
+  <div>
+      任务中心
   </div>
 </template>
 

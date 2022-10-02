@@ -1,23 +1,41 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import UserLayout from '../layout/UserLayout.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: "Index",
-    component: UserLayout,
-    redirect: '/login',
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/user/Login.vue')
+  },
+  {
+    path: '/index',
+    name: 'Index',
+    redirect: '/monitor',
+    component: () => import('../views/basic/BasicLayout.vue'),
     children: [
       {
-        path: '/login',
-        name: 'Login',
-        component: () => import('../views/user/UserLogin.vue')
+        path: '/monitor',
+        name: 'Monitor',
+        component: () => import('../views/manage/Monitor.vue'),
+      },
+      {
+        path: '/task',
+        name: 'Task',
+        component: () => import('../views/manage/Task.vue'),
+      },
+      {
+        path: '/device',
+        name: 'Device',
+        component: () => import('../views/manage/Device.vue'),
       }
     ]
-  }, 
+  },
 ]
 
 const router = new VueRouter({
